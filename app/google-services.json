@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "567497970028",
+    "project_id": "my-preschool",
+    "storage_bucket": "my-preschool.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:567497970028:android:bc450dc0b27b6e0b77e349",
+        "android_client_info": {
+          "package_name": "com.gadgetsfolk.mypreschool"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "567497970028-3p1a6guitu5lrcd8akabl6b18af8mbsi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gadgetsfolk.mypreschool",
+            "certificate_hash": "3014de4072691b6997ae0bc215647509d6bf6a0b"
+          }
+        },
+        {
+          "client_id": "567497970028-3c5a8caapahj7f5cogm25cjkar6bgo6e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTV7XtVbeRbkK5e7sOuPUw2i6Teuek6Ag"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "567497970028-3c5a8caapahj7f5cogm25cjkar6bgo6e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">My Pre-School</string>
+    <string name="class_name">Class %1$s</string>
+</resources>
