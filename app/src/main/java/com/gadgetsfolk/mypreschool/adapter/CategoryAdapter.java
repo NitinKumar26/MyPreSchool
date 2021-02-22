@@ -20,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.gadgetsfolk.mypreschool.R;
 import com.gadgetsfolk.mypreschool.model.Category;
 import com.github.twocoffeesoneteam.glidetovectoryou.GlideToVectorYou;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.material.card.MaterialCardView;
 
 import org.jetbrains.annotations.NotNull;
@@ -60,7 +61,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
 
         GlideToVectorYou.init().with(activity).load(Uri.parse(item.getIcon_url()), holder.icon);
 
-        if (!type.equals("colors")){
+        if (!type.equals(activity.getString(R.string.colors))){
             if (position % 5 == 0)
                 holder.cardView.setCardBackgroundColor(ResourcesCompat.getColor(activity.getResources(), R.color.color1, null));
             else if (position % 5 == 1)

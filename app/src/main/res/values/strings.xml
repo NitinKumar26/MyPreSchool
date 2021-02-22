@@ -1,4 +1,30 @@
 <resources>
     <string name="app_name">My Pre-School</string>
+
     <string name="class_name">Class %1$s</string>
+
+    <string name="admob_app_id">ca-app-pub-4214231949040116~5745679297</string>
+
+    <string name="native_advanced_ad_id">ca-app-pub-4214231949040116/2409069514</string>
+
+    <string name="banner_ad_id">ca-app-pub-4214231949040116/8180270948</string>
+
+    <string name="interstitial_ad_id">ca-app-pub-4214231949040116/9261063105</string>
+
+    <string name="app_open_ad_id">ca-app-pub-4214231949040116/9613057529</string>
+    <string name="unity_game_id">4022175</string>
+    <string name="unity_interstitial">interstitial</string>
+    <string name="unity_banner">banner</string>
+
+    <string name="colors">colors</string>
+
+    <string name="title_numbers">Numbers</string>
+    <string name="title_alpha">Alphabets</string>
+    <string name="title_colors">Colors</string>
+    <string name="title_animals">Animals</string>
+    <string name="title_insects">Insects</string>
+    <string name="title_fruits">Fruits</string>
+    <string name="title_vegetables">Vegetables</string>
+
+
 </resources>

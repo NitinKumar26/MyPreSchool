@@ -7,6 +7,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import com.gadgetsfolk.mypreschool.MainActivity;
 import com.gadgetsfolk.mypreschool.R;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -15,10 +18,12 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
+
+
         /* New Handler to start the Menu-Activity
          * and close this Splash-Screen after some seconds.*/
         //Duration of wait
-        int SPLASH_DISPLAY_LENGTH = 1500;
+        int SPLASH_DISPLAY_LENGTH = 2500;
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run() {

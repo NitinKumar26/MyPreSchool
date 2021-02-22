@@ -1,38 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
-
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="?android:attr/actionBarSize"
-            app:titleTextColor="@color/white"
-            />
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize" />
+
+            <ProgressBar
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:id="@+id/progress_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:indeterminate="true"
+                android:indeterminateBehavior="repeat"
+                />
+
+        </LinearLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
-
-    <ProgressBar
-        android:id="@+id/progress_horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        android:indeterminate="true"
-        android:indeterminateBehavior="repeat"
-        />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@id/ad_view_container"
+        android:layout_below="@id/appBar"
         />
 
-</LinearLayout>
+    <FrameLayout
+        android:id="@+id/ad_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>
