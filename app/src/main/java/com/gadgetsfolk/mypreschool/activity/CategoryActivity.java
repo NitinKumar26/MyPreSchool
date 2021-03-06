@@ -7,10 +7,8 @@ import android.view.Display;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
-import android.widget.Switch;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,25 +16,17 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.gadgetsfolk.mypreschool.R;
 import com.gadgetsfolk.mypreschool.adapter.CategoryAdapter;
 import com.gadgetsfolk.mypreschool.model.Category;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QuerySnapshot;
-
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class CategoryActivity extends AppCompatActivity {
     private ArrayList<Category> categories;
@@ -54,9 +44,9 @@ public class CategoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
 
-        type = getIntent().getStringExtra("type");
+        type = getIntent().getStringExtra(getString(R.string.type));
 
-        if (type != null) Log.e("type", type);
+        if (type != null) Log.e(getString(R.string.type), type);
 
         progressBar = findViewById(R.id.progress_horizontal);
 
@@ -78,15 +68,6 @@ public class CategoryActivity extends AppCompatActivity {
 
         categories = new ArrayList<>();
 
-        /*
-        categories.add(new Category("Turtle","Subtitle", ResourcesCompat.getDrawable(getResources(), R.drawable.ic_turtle, null)));
-        categories.add(new Category("Earthworm","Subtitle", ResourcesCompat.getDrawable(getResources(), R.drawable.ic_earthworm, null)));
-        categories.add(new Category("Cactus", "Subtitle", ResourcesCompat.getDrawable(getResources(), R.drawable.ic_cactus, null)));
-        categories.add(new Category("Turtle", "Subtitle", ResourcesCompat.getDrawable(getResources(), R.drawable.ic_turtle, null)));
-        categories.add(new Category("Earthworm", "Subtitle", ResourcesCompat.getDrawable(getResources(), R.drawable.ic_earthworm, null)));
-        categories.add(new Category("Cactus", "Subtitle", ResourcesCompat.getDrawable(getResources(), R.drawable.ic_cactus, null)));
-         */
-
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
 
@@ -94,15 +75,6 @@ public class CategoryActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         if (type != null)  getCategories(type);
 
-        /*
-        recyclerView.addOnItemTouchListener(new HelperMethods.RecyclerTouchListener(this, new HelperMethods.ClickListener() {
-            @Override
-            public void onClick(int position) {
-                //holder.progressBar.setVisibility(View.VISIBLE);
-
-            }
-        }));
-         */
     }
 
     private void loadBanner() {
@@ -137,7 +109,7 @@ public class CategoryActivity extends AppCompatActivity {
     }
 
     private void getNumbers() {
-        FirebaseFirestore.getInstance().collection("numbers").get()
+        FirebaseFirestore.getInstance().collection(getString(R.string.numbers)).get()
                 .addOnSuccessListener(queryDocumentSnapshots -> {
                     List<Category> list = queryDocumentSnapshots.toObjects(Category.class);
                     categories.addAll(list);
@@ -149,7 +121,7 @@ public class CategoryActivity extends AppCompatActivity {
     }
 
     private void getAlphabets() {
-        FirebaseFirestore.getInstance().collection("alphabets").get()
+        FirebaseFirestore.getInstance().collection(getString(R.string.alphabets)).get()
                 .addOnSuccessListener(queryDocumentSnapshots -> {
                     List<Category> list = queryDocumentSnapshots.toObjects(Category.class);
                     categories.addAll(list);
@@ -160,7 +132,7 @@ public class CategoryActivity extends AppCompatActivity {
     }
 
     private void getColors() {
-        FirebaseFirestore.getInstance().collection("colors")
+        FirebaseFirestore.getInstance().collection(getString(R.string.colors))
                 .get().addOnSuccessListener(queryDocumentSnapshots -> {
             List<Category> list = queryDocumentSnapshots.toObjects(Category.class);
             categories.addAll(list);
@@ -172,7 +144,7 @@ public class CategoryActivity extends AppCompatActivity {
     }
 
     private void getAnimals() {
-        FirebaseFirestore.getInstance().collection("animals")
+        FirebaseFirestore.getInstance().collection(getString(R.string.animals))
                 .get().addOnSuccessListener(queryDocumentSnapshots -> {
             List<Category> list = queryDocumentSnapshots.toObjects(Category.class);
             categories.addAll(list);
@@ -184,7 +156,7 @@ public class CategoryActivity extends AppCompatActivity {
     }
 
     private void getInsects() {
-        FirebaseFirestore.getInstance().collection("insects")
+        FirebaseFirestore.getInstance().collection(getString(R.string.insects))
                 .get().addOnSuccessListener(queryDocumentSnapshots -> {
             List<Category> list = queryDocumentSnapshots.toObjects(Category.class);
             categories.addAll(list);
@@ -196,7 +168,7 @@ public class CategoryActivity extends AppCompatActivity {
     }
 
     private void getPlants() {
-        FirebaseFirestore.getInstance().collection("plants")
+        FirebaseFirestore.getInstance().collection(getString(R.string.plants))
                 .get().addOnSuccessListener(queryDocumentSnapshots -> {
             List<Category> list = queryDocumentSnapshots.toObjects(Category.class);
             categories.addAll(list);
@@ -208,7 +180,7 @@ public class CategoryActivity extends AppCompatActivity {
     }
 
     private void getFruits() {
-        FirebaseFirestore.getInstance().collection("fruits")
+        FirebaseFirestore.getInstance().collection(getString(R.string.fruits))
                 .get().addOnSuccessListener(queryDocumentSnapshots -> {
             List<Category> list = queryDocumentSnapshots.toObjects(Category.class);
             categories.addAll(list);
@@ -220,7 +192,7 @@ public class CategoryActivity extends AppCompatActivity {
     }
 
     private void getVegetables() {
-        FirebaseFirestore.getInstance().collection("vegetables")
+        FirebaseFirestore.getInstance().collection(getString(R.string.vegetables))
                 .get().addOnSuccessListener(queryDocumentSnapshots -> {
             List<Category> list = queryDocumentSnapshots.toObjects(Category.class);
             categories.addAll(list);
@@ -232,7 +204,7 @@ public class CategoryActivity extends AppCompatActivity {
     }
 
     private void getShapes(){
-        FirebaseFirestore.getInstance().collection("shapes").get()
+        FirebaseFirestore.getInstance().collection(getString(R.string.shapes)).get()
                 .addOnSuccessListener(queryDocumentSnapshots -> {
                     List<Category> list = queryDocumentSnapshots.toObjects(Category.class);
                     categories.addAll(list);

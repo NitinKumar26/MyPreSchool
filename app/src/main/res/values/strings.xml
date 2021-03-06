@@ -16,8 +16,6 @@
     <string name="unity_interstitial">interstitial</string>
     <string name="unity_banner">banner</string>
 
-    <string name="colors">colors</string>
-
     <string name="title_numbers">Numbers</string>
     <string name="title_alpha">Alphabets</string>
     <string name="title_colors">Colors</string>
@@ -25,6 +23,21 @@
     <string name="title_insects">Insects</string>
     <string name="title_fruits">Fruits</string>
     <string name="title_vegetables">Vegetables</string>
+
+    <string name="type">type</string>
+    <string name="numbers">numbers</string>
+    <string name="alphabets">alphabets</string>
+    <string name="colors">colors</string>
+    <string name="animals">animals</string>
+    <string name="insects">insects</string>
+    <string name="fruits">fruits</string>
+    <string name="vegetables">vegetables</string>
+
+    <string name="plants">plants</string>
+    <string name="shapes">shapes</string>
+    <string name="game_id">gameId</string>
+    <string name="zone_id">zoneId</string>
+    <string name="gdpr_consent">gdpr.consent</string>
 
 
 </resources>

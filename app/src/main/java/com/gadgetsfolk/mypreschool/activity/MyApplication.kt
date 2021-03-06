@@ -29,16 +29,16 @@ class MyApplication : Application() {
 
         //GDPR consent for Unity Personalized Ads
         val metaData = MetaData(this)
-        metaData["gdpr.consent"] = true
+        metaData[getString(R.string.gdpr_consent)] = true
         metaData.commit()
 
         val unityInterstitial = Bundle()
-        unityInterstitial.putString("gameId", getString(R.string.unity_game_id))
-        unityInterstitial.putString("zoneId", getString(R.string.unity_interstitial))
+        unityInterstitial.putString(getString(R.string.game_id), getString(R.string.unity_game_id))
+        unityInterstitial.putString(getString(R.string.zone_id), getString(R.string.unity_interstitial))
 
         val unityBanner = Bundle()
-        unityBanner.putString("gameId", getString(R.string.unity_game_id))
-        unityBanner.putString("zoneId", getString(R.string.unity_banner))
+        unityBanner.putString(getString(R.string.game_id), getString(R.string.unity_game_id))
+        unityBanner.putString(getString(R.string.zone_id), getString(R.string.unity_banner))
 
         val unityConfig: MutableList<MediationConfiguration> = ArrayList()
         unityConfig.add(MediationConfiguration(AdFormat.INTERSTITIAL, unityInterstitial))

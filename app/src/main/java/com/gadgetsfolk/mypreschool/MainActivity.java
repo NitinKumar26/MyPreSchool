@@ -16,6 +16,7 @@ import android.widget.FrameLayout;
 import com.gadgetsfolk.mypreschool.activity.CategoryActivity;
 import com.gadgetsfolk.mypreschool.adapter.MainAdapter;
 import com.gadgetsfolk.mypreschool.model.Main;
+import com.google.android.ads.mediationtestsuite.MediationTestSuite;
 import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
@@ -144,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }));
 
-        //if (BuildConfig.DEBUG) MediationTestSuite.launch(this);
+        if (BuildConfig.DEBUG) MediationTestSuite.launch(this);
 
     }
 
